@@ -46,3 +46,6 @@ nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_confi
 2020-01-31 19:30:32,870 -  nornir.core -     INFO -        run() - Running task 'baseconfig' with args {} on 8 hosts
 2020-01-31 19:55:39,621 -  nornir.core -     INFO -        run() - Running task 'baseconfig' with args {} on 8 hosts
 2020-01-31 20:05:16,130 -  nornir.core -     INFO -        run() - Running task 'baseconfig' with args {} on 8 hosts
+2020-01-31 20:13:56,372 -  nornir.core -     INFO -        run() - Running task 'baseconfig' with args {} on 8 hosts
+2020-01-31 20:16:37,107 -  nornir.core -     INFO -        run() - Running task 'baseconfig' with args {} on 8 hosts
+2020-01-31 20:22:46,417 -  nornir.core -     INFO -        run() - Running task 'baseconfig' with args {} on 8 hosts
