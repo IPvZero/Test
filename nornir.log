@@ -1,0 +1,48 @@
+2020-01-31 19:13:41,230 -  nornir.core -  WARNING -        run() - Task 'baseconfig' has not been run – 0 hosts selected
+2020-01-31 19:15:22,453 -  nornir.core -     INFO -        run() - Running task 'baseconfig' with args {} on 8 hosts
+2020-01-31 19:15:24,659 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'netmiko_send_config' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/.local/lib/python3.6/site-packages/netmiko/base_connection.py", line 884, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/home/ipvzero/.local/lib/python3.6/site-packages/paramiko/client.py", line 368, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 192.168.31.13
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/ipvzero/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "/home/ipvzero/.local/lib/python3.6/site-packages/nornir/plugins/tasks/networking/netmiko_send_config.py", line 24, in netmiko_send_config
+    net_connect = task.host.get_connection("netmiko", task.nornir.config)
+  File "/home/ipvzero/.local/lib/python3.6/site-packages/nornir/core/inventory.py", line 302, in get_connection
+    extras=conn.extras,
+  File "/home/ipvzero/.local/lib/python3.6/site-packages/nornir/core/inventory.py", line 352, in open_connection
+    configuration=configuration,
+  File "/home/ipvzero/.local/lib/python3.6/site-packages/nornir/plugins/connections/netmiko.py", line 58, in open
+    self.connection = ConnectHandler(**parameters)
+  File "/home/ipvzero/.local/lib/python3.6/site-packages/netmiko/ssh_dispatcher.py", line 246, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/home/ipvzero/.local/lib/python3.6/site-packages/netmiko/base_connection.py", line 317, in __init__
+    self._open()
+  File "/home/ipvzero/.local/lib/python3.6/site-packages/netmiko/base_connection.py", line 322, in _open
+    self.establish_connection()
+  File "/home/ipvzero/.local/lib/python3.6/site-packages/netmiko/base_connection.py", line 890, in establish_connection
+    raise NetMikoTimeoutException(msg)
+netmiko.ssh_exception.NetMikoTimeoutException: Connection to device timed-out: cisco_ios 192.168.31.13:22
+
+2020-01-31 19:15:24,659 - nornir.core.task -    ERROR -      start() - Host 'R3': task 'baseconfig' failed with traceback:
+Traceback (most recent call last):
+  File "/home/ipvzero/.local/lib/python3.6/site-packages/nornir/core/task.py", line 85, in start
+    r = self.task(self, **self.params)
+  File "test3.py", line 6, in baseconfig
+    ipvzero.run(task=netmiko_send_config, config_file= "random")
+  File "/home/ipvzero/.local/lib/python3.6/site-packages/nornir/core/task.py", line 147, in run
+    raise NornirSubTaskError(task=task, result=r)
+nornir.core.exceptions.NornirSubTaskError: Subtask: <function netmiko_send_config at 0x7f55d3a30ea0> (failed)
+
+
+2020-01-31 19:29:25,891 -  nornir.core -     INFO -        run() - Running task 'baseconfig' with args {} on 8 hosts
+2020-01-31 19:30:32,870 -  nornir.core -     INFO -        run() - Running task 'baseconfig' with args {} on 8 hosts
+2020-01-31 19:55:39,621 -  nornir.core -     INFO -        run() - Running task 'baseconfig' with args {} on 8 hosts
+2020-01-31 20:05:16,130 -  nornir.core -     INFO -        run() - Running task 'baseconfig' with args {} on 8 hosts
